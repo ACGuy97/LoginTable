@@ -25,7 +25,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
             android:ems="10"
             android:id="@+id/edtUser" />
     </TableRow>
@@ -81,13 +80,13 @@
             android:layout_gravity="center_horizontal">
 
             <Button
-                android:text="@string/btnOk"
+                android:text="@android:string/ok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnOk" />
 
             <Button
-                android:text="@string/btnCancel"
+                android:text="@android:string/cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnCancel" />

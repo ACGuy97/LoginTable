@@ -3,6 +3,4 @@
     <string name="txvUser">User</string>
     <string name="txvPassword">Password</string>
     <string name="chkRemember">Remember me</string>
-    <string name="btnOk">OK</string>
-    <string name="btnCancel">Cancel</string>
 </resources>
