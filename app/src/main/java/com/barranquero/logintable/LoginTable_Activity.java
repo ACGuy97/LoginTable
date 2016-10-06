@@ -8,17 +8,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.barranquero.logintable.controller.ILoginMvc;
 import com.barranquero.logintable.controller.LoginTable_Controller;
 
 /**
  * This application uses the Model-View-Controller philosophy
+ * Class which shows a Login Activity in a TableLayout
+ * @author José Antonio Barranquero Fernández
+ * @version 1.0
  */
 public class LoginTable_Activity extends AppCompatActivity {
 
     /**
      * Every instance variable name starts with 'm'
      */
-    private LoginTable_Controller mloginTable_controller;
+    private ILoginMvc mloginMvc;   // We don't use the Controller Class directly
     private EditText medtUser;
     private EditText medtPassword;
     private Button mbtnOk;
@@ -29,7 +33,8 @@ public class LoginTable_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_table);
 
-        mloginTable_controller = new LoginTable_Controller();
+        mloginMvc = new LoginTable_Controller();
+
         medtUser = (EditText)findViewById(R.id.edtUser);
         medtPassword = (EditText)findViewById(R.id.edtPassword);
 
@@ -42,7 +47,7 @@ public class LoginTable_Activity extends AppCompatActivity {
                 if (TextUtils.isEmpty(user) || TextUtils.isEmpty(password))
                     Toast.makeText(LoginTable_Activity.this, getResources().getString(R.string.data_empty), Toast.LENGTH_SHORT).show();
                 else {
-                    int result = mloginTable_controller.validateCredentials(user, password);
+                    int result = mloginMvc.validateCredentials(user, password);
                     switch (result) {
                         case LoginTable_Controller.PASSWORD_DIGIT:
                             Toast.makeText(LoginTable_Activity.this, getResources().getString(R.string.password_digit), Toast.LENGTH_SHORT).show();
@@ -54,7 +59,7 @@ public class LoginTable_Activity extends AppCompatActivity {
                             Toast.makeText(LoginTable_Activity.this, getResources().getString(R.string.password_length), Toast.LENGTH_SHORT).show();
                             break;
                         case LoginTable_Controller.OK:
-                            // The Activity would launch
+                            // The next Activity would launch
                             break;
                     }
                 }
