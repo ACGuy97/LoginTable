@@ -1,11 +1,14 @@
 package com.barranquero.logintable.controller;
 
-import java.util.regex.Pattern;
-
 /**
- * Controller class
+ * Class that implements the Login rules
+ *  - At least one upper case and one lower case character
+ *  - At least one digit
+ *  - At least 8 characters long
+ * @author José Antonio Barranquero Fernández
+ * @version 1.0
  */
-public class LoginTable_Controller {
+public class LoginTable_Controller implements ILoginMvc {
 
     public static final int OK = 0;
     public static final int PASSWORD_DIGIT = 1;

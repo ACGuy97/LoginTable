@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/chkRemember"
             android:layout_column="1"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right|end"/>
 
     </TableRow>
 
@@ -80,16 +80,16 @@
             android:layout_gravity="center_horizontal">
 
             <Button
-                android:text="@android:string/ok"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnOk" />
-
-            <Button
                 android:text="@android:string/cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnCancel" />
+
+            <Button
+                android:text="@android:string/ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnOk" />
         </LinearLayout>
     </TableRow>
 
